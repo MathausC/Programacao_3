@@ -1,11 +1,11 @@
-package com.CC;
+package Aula1;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
         Scanner in =  new Scanner(System.in);
-        NumeroComplexo numero, numero2;
+        NumeroComplexo numero, numero2, res;
         double a, b, c , d;
         int op;
         char resp;
@@ -27,10 +27,30 @@ public class Main {
                 exibeMenu();
                 op = in.nextInt(); in.nextLine();
                 switch(op) {
-                    case 1: numero.soma(numero2); break;
-                    case 2: numero.multiplica(numero2); break;
-                    case 3: numero.divide(numero2); break;
-                    case 4: numero.éIgual(numero2); break;
+                    case 1: 
+                    	res = numero.soma(numero2);
+                    	System.out.println(res);
+                    	break;
+                    case 2: 
+                    	res = numero.subitrai(numero2);
+                    	System.out.println(res);
+                    	break;
+                    case 3: 
+                    	res = numero.multiplica(numero2); 
+                    	System.out.println(res);
+                    	break;
+                    case 4: 
+                    	res = numero.divide(numero2);
+                    	System.out.print(res);
+                    	break;
+                    case 5: 
+                    	if(numero.éIgual(numero2)) {
+                    		System.out.println("São iguals.");
+                    	}
+                    	else {
+                    		System.out.println("Não são iguals.");
+                    	}
+                    	; break;
                     case 0: System.out.println("Ok!"); break;
                     default: System.out.println("Opção inválida."); break;
                 }
@@ -53,9 +73,10 @@ public class Main {
         System.out.println("Informe uma das opções.");
         System.out.print(
                 "1 - Somar;\n" +
-                "2 - Multiplicar;\n" +
-                "3 - Dividir;\n" +
-                "4 - Vewrificar igualdade;\n" +
+                "2 - Subitrair\n" +
+                "3 - Multiplicar;\n" +
+                "4 - Dividir;\n" +
+                "5 - Vewrificar igualdade;\n" +
                 "0 - Sair ou escolher outros números.\n" +
                 "Opção: "
         );
